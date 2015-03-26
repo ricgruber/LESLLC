@@ -1590,7 +1590,7 @@ jQuery(document).ready(function($) {
 
 (function($){
 
- 		$.fn.extend({ 
+ 	$.fn.extend({ 
  		
 		//pass the options variable to the function
  		ResVid: function(options) {
@@ -1604,16 +1604,12 @@ jQuery(document).ready(function($) {
 			var options =  $.extend(defaults, options);
 
     		return $('iframe', this).each(function(i) {
-
-    			if ( $( this ).parent().hasClass( 'wpb_video_wrapper' ) ) {
-    				return;
-    			}
 				var 
 					$o = options,
 					$iframe = $(this);
 					$players = /www.youtube.com|player.vimeo.com/;
 				
-				if ($iframe.attr('src') !== undefined && $iframe.attr('src') !== '' && $iframe.attr('src').search($players) > 0) {
+				if ($iframe.attr('src').search($players) > 0) {
 
 					// Ratio
 					var $ratio = ($iframe.height() / $iframe.width()) * 100;
